@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+/**
+* main - A test c file
+* Return - 0 signifying program success
+*/
 int main(void)
 {
 	int n;
