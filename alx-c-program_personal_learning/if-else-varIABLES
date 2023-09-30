@@ -1,0 +1,203 @@
+[200~1) Write a C program to convert a given integer (in seconds) to hours, minutes and seconds.
+int main() {
+       int t, total;
+       printf("input total seconds: ");
+       scanf("%d", &t);
+       total = t/ (60*60);
+       printf("there are %d of hours\n", total);
+       t = t- (total* 60*60);
+       total = t/60;
+       printf("there are %d of minutes\n", total);
+       t= t- (total*60);
+       printf("there are %d of seconds", t);
+       
+       return 0;
+    } 
+2)Write a C program to convert a given integer (in days) to years, months and days, assuming that all months have 30 days and all years have 365 days
+int main() {
+       int x, total;
+       printf("input the number of days: ");
+       scanf("%d", &x);
+       total = x/ 365;
+       printf("there are %d years\n", total);
+       x = x- (total*365);
+       total = x/ 30;
+       printf(" there are %d of months \n", total);
+       x = x- (total* 30);
+       printf("there are %d of days", x);
+       
+       return 0;
+    } 
+3)Write a C program to compute the sum of the two input values. If the two values are the same, then return triple their sum.
+int main() {
+        int x,y;
+        printf("iinput the first number: ");
+        scanf("%d", &x);
+        printf("input the second number: ");
+        scanf("%d", &y);
+        
+        if(x==y){
+            printf("the value is %d",(x+y)*3);
+        }else {
+            printf("both value are not equal");
+        }
+    }
+
+4)Write a C program that will take a number as input and find the absolute difference between the input number and 51. If the input number is greater than 51, it will return triple the absolute difference.
+int main() {
+        int y;
+        int x= 51;
+        printf("input a number: ");
+        scanf("%d", &y);
+        if(y>x){
+            int v = y-x;
+            printf("the difference in value is %d\n", v);
+            printf("the value is %d", v*3);
+        }else {
+            printf("y is less than x");
+        }
+    }
+
+5)Write a C program that checks two given integers and returns true if at least one of them is 30 or if their sum is 30. In other words, if either of the two integers is 30 or if their sum equals 30, the program will return true.
+int main() {
+        int x,y;
+        printf("input the first number: ");
+        scanf("%d", &x);
+        printf("input the second number: ");
+        scanf("%d", &y);
+        if(x==y || (x+y ==30)){
+            printf("it retuned true");
+        }else{
+            printf("it returned false");
+        }
+    }
+
+6)Write a C program that checks if a positive integer is divisible by either 3 or 7, or both. If the integer is a multiple of 3, then the program will return true. Similarly, if the integer is a multiple of 7, then also the program will return true. If the integer is not a multiple of 3 or 7, then the program will return false.
+int main() {
+        int x;
+        printf(" input the first number: ");
+        scanf("%d", &x);
+        if(x % 3 == 0 || x % 7 == 0){
+            printf("the program returned true");
+        }else{
+            printf("the program returned false");
+        }
+    }
+
+7) Write a C program to check two given integers whether either of them is in the range 100..200 inclusive.
+ int main() {
+        int x,y;
+        printf("input a number for x: ");
+        scanf("%d", &x);
+        printf("input a number for y: ");
+        scanf("%d", &y);
+        if(x >= 100 && x<= 200){
+            printf("x is in range\n");
+        }else{
+            printf("x is not in range\n");
+        }
+        if(y >= 100 && y<= 200){
+            printf("y is in range");
+        }else{
+            printf("Y is not in range");
+        }
+    }
+
+8)Write a C program to check if two given non-negative integers have the same last digit.
+int main() {
+       int x,y;
+       printf("input the first integer: ");
+       scanf("%d", &x);
+       printf("input the second integer: ");
+       scanf("%d", &y);
+       
+       if(abs(x %10)== abs(y%10)){
+           printf("the last digit is same");
+       }else{
+           printf("the last digit is not same");
+       }
+       
+       return 0;
+   }s
+
+9) Write a C program that calculates the volume of a sphere.
+int main() {
+        float pi, radius, volume;
+        pi = 3.14159265358979323846264338327950288419716939937510;
+        printf("input the value of radius: ");
+        scanf("%f", &radius);
+        
+        volume = (4.0/3.0)* pi *(radius*radius*radius);
+        printf("the volume of the sphere is %f", volume);
+        
+        return 0;
+    }
+
+10)This program will assign a random number to the variable n each time it is executed. Complete the source code in order to print whether the number stored in the variable n is positive or negative.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+    
+    int main() {
+        srand(time(NULL));
+        int var;
+        var= rand() - RAND_MAX /2;
+        if(var >0)
+        {
+            printf("var is positive %d", var);
+        }else if(var < 0)
+        {
+            printf("var is negative %d", var);
+        }else
+        {
+            printf("var is zero%d", var);
+        }
+        
+        return 0;
+    }
+
+11)This program will assign a random number to the variable n each time it is executed. Complete the source code in order to print the last digit of the number stored in the variable
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+    int main() {
+        srand(time(NULL));
+        int n, l;
+        n = rand() - RAND_MAX /2;
+        l = n % 10;
+        if(l >5)
+        {
+            printf("%dis greater than 5 ", l);
+        }
+        else if(l == 0)
+        {
+            printf("%d is zero", l);
+        }
+        else if(l <6 && l != 0)
+        {
+            printf("%d  is less than 6 but not zero", l);
+        }else
+        {
+            printf("fuck you");
+        }
+         
+         return 0;
+    }
+
+12)Write a program that prints the lowercase alphabet in reverse, followed by a new line.
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+    
+    int main() {
+        char x;
+        for(x = 'z'; x >= 'a'; x--)
+        {
+            putchar(x);
+        }
+        
+        return 0;
+    }
